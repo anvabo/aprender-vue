@@ -9,6 +9,8 @@
 
     <ul>
         <li><router-link :to="{ name: 'Basico' }">Básico</router-link></li>
+        <li><router-link :to="{ name: 'Formulario' }">Formulario</router-link></li>
+        <li><router-link :to="{ name: 'Eventos' }">Eventos</router-link></li>
     </ul>
   
 </template>
