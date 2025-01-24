@@ -12,9 +12,9 @@ const mensajeDirector = ref('');
 
 const emit = defineEmits(['responderAlumno']);
 
-on("mensaje", (mensaje: string) => {
-    console.log("mensaje", mensaje);
-    mensajeDirector.value = mensaje;
+on("mensaje", (mensajedirector: string) => {
+    console.log("mensaje", mensajedirector);
+    mensajeDirector.value = mensajedirector;
 });
 
 onMounted(() => {

@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import { provide, ref } from "vue";
-import useEventBus from "../../servicios/useEventBus";
 
+import useEventBus from "../../servicios/useEventBus";
 const { emit } = useEventBus();
 
 const mensajeDirector = ref('Mensaje a profesores y alumnos');
