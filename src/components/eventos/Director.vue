@@ -2,12 +2,16 @@
 
 <script setup lang="ts">
 import { provide, ref } from "vue";
+import useEventBus from "../../servicios/useEventBus";
 
-const mensajeDirector = ref('');
+const { emit } = useEventBus();
+
+const mensajeDirector = ref('Mensaje a profesores y alumnos');
 
 const mensajeTodos = () => {
-    provide('mensaje', mensajeDirector);
-};
+    emit('mensaje', mensajeDirector.value)
+    console.log("mensajeDirector", mensajeDirector.value)
+  }
 
 </script>
 

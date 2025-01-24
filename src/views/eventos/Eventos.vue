@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <h1>EJemplo de eventos entre componentes</h1>
+    <h1>Ejemplo de eventos entre componentes</h1>
 
     <Alumno />
   

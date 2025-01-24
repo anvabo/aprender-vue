@@ -1,18 +1,30 @@
-
-
 <script setup lang="ts">
-import { inject, ref } from "vue";
+import { inject, ref, onMounted } from "vue";
+import useEventBus from "../../servicios/useEventBus";
+
+const { on } = useEventBus();
 
 const props = defineProps<{ tutorias: string }>();
 const respuestaAlumno = ref('');
 
+const mensajeColegio = inject<string>('key');
+const mensajeDirector = ref('');
+
 const emit = defineEmits(['responderAlumno']);
 
-const responderAlumno = () => {
-emit('responderAlumno', respuestaAlumno);
+on("mensaje", (mensaje: string) => {
+    console.log("mensaje", mensaje);
+    mensajeDirector.value = mensaje;
+});
 
-const mensajeDirector = inject<string>('mensaje');
+onMounted(() => {
+    console.log("mensajeColegio", mensajeColegio);
+});
+
+const responderAlumno = () => {
+    emit('responderAlumno', respuestaAlumno);
 };
+
 
 </script>
 
@@ -35,13 +47,19 @@ const mensajeDirector = inject<string>('mensaje');
 
         </div>
 
-        <p>
-            Mensaje del director: {{ mensajeDirector }}
-        </p>
+<div class="alert alert-danger mt-2" role="alert" v-if="mensajeColegio">
+    Mensaje del colegio: {{ mensajeColegio }}
+</div>
 
-        <div class="alert alert-info mt-3" v-if="mensajeDirector">
-            {{ mensajeDirector }}
-        </div>
+<div class="alert alert-info mt-2" role="alert" v-if="mensajeDirector">
+    Mensaje del director: {{ mensajeDirector }}
+</div>
+
+       
+
+        
+
+       
     </div>
 
 </template>
