@@ -17,7 +17,7 @@ const mostrarRespuesta = (respuesta: string) => {
 
 <template>
     <div class="border border-primary p-3">
-        <h1>Alumno</h1>
+        <h2>Alumno</h2>
 
         <p class="mb-2">
             Tutorías al profesor: {{ tutoriaProfesor }}

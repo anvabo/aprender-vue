@@ -5,7 +5,7 @@
 
 <template>
     <div class="border border-primary p-3">
-        <h1>Alumno</h1>
+        <h2>Alumno</h2>
 
         <div class="alert alert-info" role="alert">
             <slot name="aviso">

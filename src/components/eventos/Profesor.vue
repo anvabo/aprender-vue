@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, ref, onMounted } from "vue";
-import useEventBus from "../../servicios/useEventBus";
+import useEventBus from "@/services/useEventBus";
 
 const { on } = useEventBus();
 
@@ -31,21 +31,30 @@ const responderAlumno = () => {
 
 <template>
     <div class="border border-secondary p-3">
-        <h1>Profesor</h1>
+        <h2>Profesor</h2>
 
         <p>
             Tutorías del alumno: {{ props.tutorias }}
         </p>
 
         <div class="row">
-            <div class="col-6">
-                <input type="text" v-model="respuestaAlumno" class="form-control" placeholder="Respuesta del profesor">
-            </div>
-            <div class="col-6">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="respuestaprofesor" class="col-form-label">Respuesta profesor</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="respuestaprofesor" v-model="respuestaAlumno" class="form-control" aria-describedby="descripcionrespuestaprofesor">
+                </div>
+                <div class="col-auto">
+                    <span id="descripcionrespuestaprofesor" class="form-text">
+                        Respuesta del profesor a la tutía del alumno.
+                    </span>
+                </div>
+                <div class="col-auto">
                 <button class="btn btn-primary" @click="responderAlumno">Responde Alumno</button>
             </div>
-
         </div>
+    </div>
 
 <div class="alert alert-danger mt-2" role="alert" v-if="mensajeColegio">
     Mensaje del colegio: {{ mensajeColegio }}

@@ -15,6 +15,7 @@
 </script>
 
 <template>
+  <h1>Formulario</h1>
   <form class="needs-validation" novalidate>
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
@@ -42,7 +43,4 @@
 </template>
 
 <style lang="scss" scoped>
-  h1 {
-    color: blue;
-  }
 </style>
