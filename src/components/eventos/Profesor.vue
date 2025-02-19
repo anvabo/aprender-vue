@@ -43,32 +43,28 @@ const responderAlumno = () => {
                     <label for="respuestaprofesor" class="col-form-label">Respuesta profesor</label>
                 </div>
                 <div class="col-auto">
-                    <input type="text" id="respuestaprofesor" v-model="respuestaAlumno" class="form-control" aria-describedby="descripcionrespuestaprofesor">
+                    <input type="text" id="respuestaprofesor" v-model="respuestaAlumno" class="form-control"
+                        aria-describedby="descripcionrespuestaprofesor">
                 </div>
                 <div class="col-auto">
                     <span id="descripcionrespuestaprofesor" class="form-text">
-                        Respuesta del profesor a la tutía del alumno.
+                        Respuesta del profesor a la tutoría del alumno.
                     </span>
                 </div>
                 <div class="col-auto">
-                <button class="btn btn-primary" @click="responderAlumno">Responde Alumno</button>
+                    <button class="btn btn-primary" @click="responderAlumno">Responde Alumno</button>
+                </div>
             </div>
         </div>
-    </div>
 
-<div class="alert alert-danger mt-2" role="alert" v-if="mensajeColegio">
-    Mensaje del colegio: {{ mensajeColegio }}
-</div>
+        <div class="alert alert-danger mt-2" role="alert" v-if="mensajeColegio">
+            Mensaje del colegio: {{ mensajeColegio }}
+        </div>
 
-<div class="alert alert-info mt-2" role="alert" v-if="mensajeDirector">
-    Mensaje del director: {{ mensajeDirector }}
-</div>
+        <div class="alert alert-info mt-2" role="alert" v-if="mensajeDirector">
+            Mensaje del director: {{ mensajeDirector }}
+        </div>
 
-       
-
-        
-
-       
     </div>
 
 </template>

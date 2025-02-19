@@ -6,8 +6,6 @@ import Director from '@/components/eventos/Director.vue';
 
 const mensajeColegio = ref('Mensaje a profesores y alumnos (appVue)');
 provide('key', mensajeColegio)
-
-
 </script>
 
 <template>
